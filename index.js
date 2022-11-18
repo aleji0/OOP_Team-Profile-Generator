@@ -4,18 +4,16 @@ const Intern = require('./src/Intern');
 const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
-
+const render = require("./src/render/template.js")
 const DIST_DIR = path.resolve(__dirname, './');
 const distPath = path.join(DIST_DIR, './index.html');
-
-const render = require('./src/page-template.js');
 
 const teamMembers = [];
 const idArray = [];
 
-// Inform user of usage
+
 console.log(
-  '\nWelcome to the team generator!\nUse `npm run reset` to reset the dist/ folder\n'
+  '\nThis is my team generator.\n"npm run reset will reset the dist/ folder\n'
 );
 
 function appMenu() {
@@ -31,19 +29,19 @@ function appMenu() {
             if (answer !== '') {
               return true;
             }
-            return 'Please enter at least one character.';
+            return 'Cannot be empty';
           },
         },
         {
           type: 'input',
           name: 'managerId',
-          message: "What is the team manager's id?",
+          message: "What is the team manager's ID?",
           validate: (answer) => {
             const pass = answer.match(/^[1-9]\d*$/);
             if (pass) {
               return true;
             }
-            return 'Please enter a positive number greater than zero.';
+            return "Enter a number greater than '0'";
           },
         },
         {
@@ -55,7 +53,7 @@ function appMenu() {
             if (pass) {
               return true;
             }
-            return 'Please enter a valid email address.';
+            return "Enter a valid email address";
           },
         },
         {
@@ -67,7 +65,7 @@ function appMenu() {
             if (pass) {
               return true;
             }
-            return 'Enter a numbe greater than zero';
+            return 'Enter a number greater than zero';
           },
         },
       ])
@@ -90,7 +88,7 @@ function appMenu() {
         {
           type: 'list',
           name: 'memberChoice',
-          message: 'Which type of team member would you like to add?',
+          message: "What categoryof team member are you adding?",
           choices: [
             'Engineer',
             'Intern',
@@ -123,13 +121,13 @@ function appMenu() {
             if (answer !== '') {
               return true;
             }
-            return 'Please enter at least one character.';
+            return "Cannot be empty";
           },
         },
         {
           type: 'input',
           name: 'engineerId',
-          message: "What is your engineer's id?",
+          message: "What is your engineer's ID?",
           validate: (answer) => {
             const pass = answer.match(/^[1-9]\d*$/);
             if (pass) {
@@ -196,7 +194,7 @@ function appMenu() {
         {
           type: 'input',
           name: 'internId',
-          message: "What is your intern's id?",
+          message: "What is your intern's ID?",
           validate: (answer) => {
             const pass = answer.match(/^[1-9]\d*$/);
             if (pass) {
@@ -206,7 +204,7 @@ function appMenu() {
                 return true;
               }
             }
-            return 'Please enter a positive number greater than zero.';
+            return "Enter a number greater than '0'";
           },
         },
         {

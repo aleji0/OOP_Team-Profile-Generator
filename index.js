@@ -4,7 +4,7 @@ const Intern = require('./src/Intern');
 const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
-const render = require("./src/render/template.js")
+const render = require("./template.js")
 const DIST_DIR = path.resolve(__dirname, './');
 const distPath = path.join(DIST_DIR, './index.html');
 
@@ -65,7 +65,7 @@ function appMenu() {
             if (pass) {
               return true;
             }
-            return 'Enter a number greater than zero';
+            return "Enter a number greater than '0'";
           },
         },
       ])

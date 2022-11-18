@@ -1,0 +1,26 @@
+{
+  "name": "oop_team-profile-generator",
+  "version": "1.0.0",
+  "description": "## Your Task",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleji0/OOP_Team-Profile-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleji0/OOP_Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/aleji0/OOP_Team-Profile-Generator#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.1.4"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
